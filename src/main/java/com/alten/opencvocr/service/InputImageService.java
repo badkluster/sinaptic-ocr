@@ -35,14 +35,14 @@ public class InputImageService {
         //     try{
         InputImageOCR inputImage = new InputImageOCR();
         String imageName = StringUtils.cleanPath(image.getOriginalFilename());
-        String path = "C:/Users/seven/Desktop/REACT-NATIVE/springBootFileReceiver/inFiles/"+ name;
+        String path = 'mysql://beb0beeb64be76:f271d491@us-cdbr-east-05.cleardb.net/heroku_e4eed405ab9a7b8?reconnect=true'+ name;
         if(imageName.contains("..")){
             System.out.println("Not a valid image name or file");
         }//else{
         inputImage.setImage(image.getBytes());
         File file = new File(path);
         image.transferTo(file);
-        String detectedPath = "C:/Users/seven/Desktop/REACT-NATIVE/springBootFileReceiver/inFiles/"+ name +"."+detectImageFormat(file)+"";
+        String detectedPath = 'mysql://beb0beeb64be76:f271d491@us-cdbr-east-05.cleardb.net/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
         File file1 = new File(detectedPath);
         file.renameTo(file1);
         inputImage.setName(name);
@@ -70,8 +70,8 @@ public class InputImageService {
         }//else{
         File file = new File(path);
         image.transferTo(file);
-        String detectedPath = "C:/Users/seven/Desktop/REACT-NATIVE/springBootFileReceiver/inFiles/"+ name +"."+detectImageFormat(file)+"";
-        String targetPath = "C:/Users/seven/Desktop/REACT-NATIVE/springBootFileReceiver/outFiles/"+ name +"."+detectImageFormat(file)+"";
+        String detectedPath = 'mysql://beb0beeb64be76:f271d491@us-cdbr-east-05.cleardb.net/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
+        String targetPath = 'mysql://beb0beeb64be76:f271d491@us-cdbr-east-05.cleardb.net/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
         File file1 = new File(detectedPath);
         file.renameTo(file1);
         inputImage.setName(name);
