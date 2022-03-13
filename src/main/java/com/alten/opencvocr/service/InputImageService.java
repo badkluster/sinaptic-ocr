@@ -35,14 +35,14 @@ public class InputImageService {
         //     try{
         InputImageOCR inputImage = new InputImageOCR();
         String imageName = StringUtils.cleanPath(image.getOriginalFilename());
-        String path = 'us-cdbr-east-05.cleardb.net:3306/heroku_e4eed405ab9a7b8?reconnect=true'+ name;
+        String path = 'us-cdbr-east-05.cleardb.net:3306'+ name;
         if(imageName.contains("..")){
             System.out.println("Not a valid image name or file");
         }//else{
         inputImage.setImage(image.getBytes());
         File file = new File(path);
         image.transferTo(file);
-        String detectedPath = 'us-cdbr-east-05.cleardb.net:3306/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
+        String detectedPath = 'us-cdbr-east-05.cleardb.net:3306'+ name +"."+detectImageFormat(file)+"";
         File file1 = new File(detectedPath);
         file.renameTo(file1);
         inputImage.setName(name);
@@ -64,14 +64,14 @@ public class InputImageService {
         //     try{
         InputImageFaceRecon inputImage = new InputImageFaceRecon();
         String imageName = StringUtils.cleanPath(image.getOriginalFilename());
-        String path = 'us-cdbr-east-05.cleardb.net:3306/heroku_e4eed405ab9a7b8?reconnect=true'+ name;
+        String path = 'us-cdbr-east-05.cleardb.net:3306'+ name;
         if(imageName.contains("..")){
             System.out.println("Not a valid image name or file");
         }//else{
         File file = new File(path);
         image.transferTo(file);
-        String detectedPath = 'us-cdbr-east-05.cleardb.net:3306/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
-        String targetPath = 'us-cdbr-east-05.cleardb.net:3306/heroku_e4eed405ab9a7b8?reconnect=true'+ name +"."+detectImageFormat(file)+"";
+        String detectedPath = 'us-cdbr-east-05.cleardb.net:3306'+ name +"."+detectImageFormat(file)+"";
+        String targetPath = 'us-cdbr-east-05.cleardb.net:3306'+ name +"."+detectImageFormat(file)+"";
         File file1 = new File(detectedPath);
         file.renameTo(file1);
         inputImage.setName(name);
